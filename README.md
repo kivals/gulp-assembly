@@ -1,1 +1,3 @@
-# gulp-assembly
+# Gulp - сборка
+
+> Используется Gulp 4
