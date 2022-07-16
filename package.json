@@ -1,0 +1,27 @@
+{
+  "name": "gulp-assembly",
+  "version": "1.0.0",
+  "description": "> Используется Gulp 4",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kivals/gulp-assembly.git"
+  },
+  "keywords": [
+    "gulp",
+    "webpack",
+    "js",
+    "css",
+    "scss",
+    "html"
+  ],
+  "author": "melnik",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
