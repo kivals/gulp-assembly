@@ -2,14 +2,20 @@ const pathSrc = './src';
 const pathBuild = './build'
 
 export default {
-  root: pathBuild,
   src: {
     html: `${pathSrc}/html/*.html`,
     files: `${pathSrc}/files/**/*.*`
   },
 
   build: {
-    html: `${pathBuild}/files/**/*.*`,
-    files: `${pathBuild}/files/**/*.*`
+    html: `${pathBuild}/`,
+    files: `${pathBuild}/files/`
   },
+
+  watch: {
+    html: `${pathSrc}/**/*.html`,
+    files: `${pathSrc}/files/**/*.*`
+  },
+
+  clean: pathBuild,
 }
