@@ -1,6 +1,5 @@
 import fileInclude from 'gulp-file-include';
 import htmlmin from 'gulp-htmlmin';
-import size from 'gulp-size';
 
 const html = () => {
   return app.gulp.src(app.path.src.html)
@@ -11,17 +10,18 @@ const html = () => {
       })
     ))
     .pipe(fileInclude())
-    .pipe(size({
+    .pipe(app.plugins.size({
       title: "До сжатия"
     }))
     .pipe(htmlmin({
         collapseWhitespace: true,
       }
     ))
-    .pipe(size({
+    .pipe(app.plugins.size({
       title: "После сжатия"
     }))
     .pipe(app.gulp.dest(app.path.build.html))
+    .pipe(app.plugins.browserSync.stream());
 }
 
 export {
