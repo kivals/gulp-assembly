@@ -8,7 +8,7 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries' // Группи�
 const sassPlugin = gulpSass(sass);
 
 const scss = () => {
-  return app.gulp.src(app.path.src.scss)
+  return app.gulp.src(app.path.src.scss, { sourcemaps: true })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: 'SCSS',
@@ -31,7 +31,7 @@ const scss = () => {
       title: "style.min.css"
     }))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(app.gulp.dest(app.path.build.css))
+    .pipe(app.gulp.dest(app.path.build.css, { sourcemaps: true }))
     .pipe(app.plugins.browserSync.stream());
 }
 
