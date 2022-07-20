@@ -1,7 +1,7 @@
 import webpack from "webpack-stream";
 import babel from "gulp-babel";
 
-const js = () => {
+const scripts = () => {
   return app.gulp.src(app.path.src.js, { sourcemaps: true })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
@@ -22,5 +22,5 @@ const js = () => {
 }
 
 export {
-  js
+  scripts
 }
