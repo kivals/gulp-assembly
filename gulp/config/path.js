@@ -8,7 +8,8 @@ export default {
     scss: `${pathSrc}/scss/style.scss`,
     js: `${pathSrc}/js/app.js`,
     images: `${pathSrc}/img/**/*.{jpg,jpeg,png,gif,webp}`,
-    svg: `${pathSrc}/img/**/*.{svg}`,
+    svg: `${pathSrc}/img/**/*.svg`,
+    svgicons: `${pathSrc}/img/svgicons/*.svg`,
     // fonts: `${pathSrc}/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`
   },
 
