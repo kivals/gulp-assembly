@@ -15,13 +15,13 @@ const images = () => {
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.images))
     .pipe(newer(app.path.build.images))
-    .pipe(imagemin({
+    .pipe(app.ifPlugin(app.isBuild, imagemin({
       verbose: true,  // вывод информации о размере для каждого изображения
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
       interlaced: true,
       optimizationLevel: 4 // 0 to 7
-    }))
+    })))
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.svg))
     .pipe(app.gulp.dest(app.path.build.images))

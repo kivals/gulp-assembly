@@ -10,7 +10,6 @@ export default {
     images: `${pathSrc}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${pathSrc}/img/**/*.svg`,
     svgicons: `${pathSrc}/img/svgicons/*.svg`,
-    // fonts: `${pathSrc}/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`
   },
 
   build: {

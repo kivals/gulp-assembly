@@ -9,7 +9,7 @@ import webpCss from "gulp-webp";
 const sassPlugin = gulpSass(sass);
 
 const scss = () => {
-  return app.gulp.src(app.path.src.scss, { sourcemaps: true })
+  return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: 'SCSS',
@@ -33,7 +33,7 @@ const scss = () => {
       title: "style.min.css"
     }))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(app.gulp.dest(app.path.build.css, { sourcemaps: true }))
+    .pipe(app.gulp.dest(app.path.build.css, { sourcemaps: app.isDev }))
     .pipe(app.plugins.browserSync.stream());
 }
 
