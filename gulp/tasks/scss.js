@@ -17,18 +17,18 @@ const scss = () => {
       })
     ))
     .pipe(sassPlugin({ outputStyle: 'expanded' }))
-    .pipe(autoprefixer({
+    .pipe(app.plugins.ifPlugin(app.isBuild, autoprefixer({
       grid: true,
       overrideBrowserslist: ['last 10 versions'],
       cascade: true
-    }))
+    })))
     .pipe(webpCss())
-    .pipe(groupCssMediaQueries())
+    .pipe(app.plugins.ifPlugin(app.isBuild, groupCssMediaQueries()))
     .pipe(app.plugins.size({
       title: "style.css"
     }))
     .pipe(app.gulp.dest(app.path.build.css))
-    .pipe(cleanCss({ level: 2 }))
+    .pipe(app.plugins.ifPlugin(app.isBuild, cleanCss({ level: 2 })))
     .pipe(app.plugins.size({
       title: "style.min.css"
     }))
