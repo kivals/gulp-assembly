@@ -1,3 +1,7 @@
+@import "config/fonts";
+
 body {
-  background-color: #f52345;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: url("../img/map-black.jpg");
 }

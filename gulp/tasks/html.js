@@ -1,5 +1,6 @@
 import fileInclude from 'gulp-file-include';
 import htmlmin from 'gulp-htmlmin';
+import webpHtml from 'gulp-webp-html';
 
 const html = () => {
   return app.gulp.src(app.path.src.html)
@@ -9,6 +10,7 @@ const html = () => {
         message: 'Error: <%= error.message %>'
       })
     ))
+    .pipe(webpHtml())
     .pipe(fileInclude())
     .pipe(app.plugins.size({
       title: "До сжатия"

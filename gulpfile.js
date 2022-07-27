@@ -13,16 +13,21 @@ import { clean } from "./gulp/tasks/clean.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
-import { js } from "./gulp/tasks/js.js";
+import { scripts } from "./gulp/tasks/scripts.js";
+import { images } from "./gulp/tasks/images.js";
+import { otfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
 
 const watcher = () => {
   gulp.watch(path.watch.files, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
-  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.js, scripts);
+  gulp.watch(path.watch.images, images);
 }
 
-const mainTasks = gulp.parallel(copy, html, scss, js);
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
+
+const mainTasks = gulp.series(fonts,  gulp.parallel(copy, html, scss, scripts, images));
 
 const dev = gulp.series(clean, mainTasks, gulp.parallel(watcher, server));
 
@@ -30,7 +35,11 @@ export {
   clean,
   html,
   scss,
-  js
+  scripts,
+  images,
+  ttfToWoff,
+  fontStyle,
+  fonts,
 }
 
 gulp.task('default', dev);
