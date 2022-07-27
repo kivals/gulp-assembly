@@ -1,5 +1,8 @@
+import path from 'path';
+
 const pathSrc = './src';
-const pathBuild = './build'
+const pathBuild = './build';
+const root = path.basename(path.resolve());
 
 export default {
   src: {
@@ -31,5 +34,6 @@ export default {
 
   clean: pathBuild,
   pathSrc,
-  pathBuild
+  pathBuild,
+  root
 }

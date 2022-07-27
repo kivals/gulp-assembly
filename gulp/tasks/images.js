@@ -15,7 +15,7 @@ const images = () => {
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.images))
     .pipe(newer(app.path.build.images))
-    .pipe(app.ifPlugin(app.isBuild, imagemin({
+    .pipe(app.plugins.ifPlugin(app.isBuild, imagemin({
       verbose: true,  // вывод информации о размере для каждого изображения
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
