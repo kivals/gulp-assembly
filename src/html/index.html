@@ -1,14 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru" class="page">
     @@include("chunk/head.html", {
         "title": "Главная"
     })
-<body>
-    @@include("chunk/header.html")
-    <main>
-        <h1>Главная</h1>
-    </main>
-    @@include("chunk/footer.html")
-    <script src="js/app.min.js"></script>
+<body class="page__body">
+    <div class="site-container">
+        @@include("chunk/header.html")
+        <main class="main">
+            <h1>Главная</h1>
+        </main>
+        @@include("chunk/footer.html")
+    </div>
 </body>
 </html>
