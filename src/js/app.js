@@ -1,3 +1,1 @@
-import { isWebp } from './modules/functions.js'
-
-isWebp()
+import './modules/smooth-scroll.js';
