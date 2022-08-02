@@ -12,7 +12,7 @@ export default {
     js: `${pathSrc}/js/app.js`,
     images: `${pathSrc}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${pathSrc}/img/**/*.svg`,
-    svgicons: `${pathSrc}/img/svgicons/*.svg`,
+    svgicons: `${pathSrc}/svgicons/*.svg`,
   },
 
   build: {
