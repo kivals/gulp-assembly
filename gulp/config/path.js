@@ -6,9 +6,9 @@ const root = path.basename(path.resolve());
 
 export default {
   src: {
-    html: `${pathSrc}/html/*.html`,
+    html: `${pathSrc}/html/**/*.html`,
     files: `${pathSrc}/files/**/*.*`,
-    scss: `${pathSrc}/scss/style.scss`,
+    scss: `${pathSrc}/scss/**/*.scss`,
     js: `${pathSrc}/js/app.js`,
     images: `${pathSrc}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${pathSrc}/img/**/*.svg`,

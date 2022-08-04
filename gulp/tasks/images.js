@@ -10,7 +10,7 @@ const images = () => {
         message: 'Error: <%= error.message %>'
       })
     ))
-    .pipe(newer(app.path.build.images))
+    // .pipe(newer(app.path.build.images))
     .pipe(webp())
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.images))

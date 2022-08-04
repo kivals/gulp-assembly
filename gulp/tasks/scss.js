@@ -16,7 +16,12 @@ const scss = () => {
         message: 'Error: <%= error.message %>'
       })
     ))
-    .pipe(sassPlugin({ outputStyle: 'expanded' }))
+    .pipe(sassPlugin())
+    .pipe(autoprefixer({
+      cascade: false,
+      grid: true,
+      overrideBrowserslist: ["last 5 versions"]
+    }))
     .pipe(app.plugins.ifPlugin(app.isBuild, autoprefixer({
       grid: true,
       overrideBrowserslist: ['last 10 versions'],

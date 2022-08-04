@@ -11,8 +11,8 @@ const html = () => {
         message: 'Error: <%= error.message %>'
       })
     ))
-    .pipe(webpHtml())
     .pipe(fileInclude())
+    .pipe(webpHtml())
     .pipe(app.plugins.size({
       title: "До сжатия"
     }))
