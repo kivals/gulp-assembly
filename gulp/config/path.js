@@ -1,14 +1,18 @@
+import path from 'path';
+
 const pathSrc = './src';
-const pathBuild = './build'
+const pathBuild = './build';
+const root = path.basename(path.resolve());
 
 export default {
   src: {
-    html: `${pathSrc}/html/*.html`,
+    html: `${pathSrc}/html/**/*.html`,
     files: `${pathSrc}/files/**/*.*`,
-    scss: `${pathSrc}/scss/style.scss`,
+    scss: `${pathSrc}/scss/**/*.scss`,
     js: `${pathSrc}/js/app.js`,
     images: `${pathSrc}/img/**/*.{jpg,jpeg,png,gif,webp}`,
-    svg: `${pathSrc}/img/**/*.{svg}`,
+    svg: `${pathSrc}/img/**/*.svg`,
+    svgicons: `${pathSrc}/svgicons/*.svg`,
   },
 
   build: {
@@ -17,6 +21,7 @@ export default {
     css: `${pathBuild}/css/`,
     js: `${pathBuild}/js/`,
     images: `${pathBuild}/img/`,
+    fonts: `${pathBuild}/fonts/`,
   },
 
   watch: {
@@ -28,4 +33,7 @@ export default {
   },
 
   clean: pathBuild,
+  pathSrc,
+  pathBuild,
+  root
 }
