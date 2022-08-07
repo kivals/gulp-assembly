@@ -65,7 +65,7 @@ const fontStyle = () => {
   }
 
   // Путь файла стилей подключения шрифтов
-  const fontStyle = `${app.path.pathSrc}/scss/config/fonts.scss`;
+  const fontStyle = `${app.path.pathSrc}/scss/config/_fonts.scss`;
 
   // Проверяем существует ли файл стилей для подключения шрифтов
   if (fs.existsSync(fontStyle)) {
