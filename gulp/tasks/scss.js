@@ -22,11 +22,6 @@ const scss = () => {
       grid: true,
       overrideBrowserslist: ["last 5 versions"]
     })))
-    .pipe(app.plugins.ifPlugin(app.isBuild, autoprefixer({
-      grid: true,
-      overrideBrowserslist: ['last 10 versions'],
-      cascade: true
-    })))
     .pipe(webpCss())
     .pipe(app.plugins.ifPlugin(app.isBuild, groupCssMediaQueries()))
     .pipe(app.plugins.size({
